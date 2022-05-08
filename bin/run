@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "ynab_importer"
+
+ynab_api = YNAB::API.new(ENV["YNAB_ACCESS_TOKEN"])
+YnabImporter::Importer.new(api: ynab_api).call
